@@ -9,22 +9,23 @@
   <artifactId>web-app</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <packaging>war</packaging> <!-- Important: WAR -->
+  <packaging>war</packaging>
 
   <name>Web Application</name>
-  <description>A simple Java web application project</description>
+  <description>A simple Java web application</description>
 
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source> <!-- Java 8 -->
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source> <!-- Java 11 -->
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
-    <!-- Servlet API (provided by Tomcat/Server) -->
+    <!-- Servlet API (provided) -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>5.0.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -32,18 +33,18 @@
   <build>
     <plugins>
 
-      <!-- Maven Compiler Plugin -->
+      <!-- Compiler plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.11.0</version>
       </plugin>
 
-      <!-- Maven WAR Plugin (compatible with older Maven) -->
+      <!-- WAR plugin (latest stable) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version> <!-- old, stable version -->
+        <version>3.3.2</version>
       </plugin>
 
     </plugins>
